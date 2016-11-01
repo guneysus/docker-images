@@ -12,7 +12,6 @@ RUN apk add --update \
         python-dev \
         openssl-dev && \
 
-    pip install \
-        scrapy \
+    pip install scrapy && \
     apk del --purge *-dev build-base && \
     rm -rf /tmp/* /var/cache/apk/* /root/.cache/*
