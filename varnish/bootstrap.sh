@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE=nginx
+BASE=varnish
 VERSIONS="1.10 \
           stable \
           1.10.1 \
@@ -19,6 +19,7 @@ VERSIONS="1.10 \
           1.8.1 \
           1.8 \
           "
+
 for VERSION in $VERSIONS
 do
   IMAGE=guneysu/$BASE:$VERSION

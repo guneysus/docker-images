@@ -19,13 +19,14 @@ VERSIONS="1.10 \
           1.8.1 \
           1.8 \
           "
+mkdir -p $VERSIONS
+
 for VERSION in $VERSIONS
 do
   IMAGE=guneysu/$BASE:$VERSION
   ORIGIN=$BASE:$VERSION-alpine
 
   docker pull $ORIGIN && \
-  mkdir -p $VERSION && \
   echo FROM $ORIGIN > $VERSION/Dockerfile && \
   docker build -t $IMAGE $VERSION && \
   docker push $IMAGE&
