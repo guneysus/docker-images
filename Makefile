@@ -1,5 +1,4 @@
-TARGETS := haproxy nginx python
-
+TARGETS := haproxy nginx python monit
 default: $(TARGETS)
 
 $(TARGETS):
