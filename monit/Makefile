@@ -1,15 +1,20 @@
-IMAGE := guneysu/monit
+BASE := guneysu/monit
+LATEST := $(BASE):latest
+VERSIONS := 5.15 5.17 5.20
 
-default: build push
+default: $(VERSIONS) build push
+
+$(VERSIONS):
+	@docker build -t $(BASE):$@ -f $@/Dockerfile $@
+	@docker push $(BASE):$@
 
 build:
-	@docker build -t $(IMAGE) .
+	@docker build -t $(LATEST) .
 
 push: build
-	@docker push $(IMAGE)
+	@docker push $(LATEST)
 
 run:
-	@docker run -it $(IMAGE)
+	@docker run -it $(LATEST)
 
-.PHONY: default build push run
-
+.PHONY: default build push run $(VERSIONS)
