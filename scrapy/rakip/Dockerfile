@@ -1,10 +1,13 @@
-FROM guneysu/python:2.7.12
-# RUN pip install --no-cache-dir scrapy==1.2.1
+FROM alpine:3.4
+MAINTAINER Wodby <hello@wodby.com>
+
 RUN apk add --update \
         openssl \
         ca-certificates \
+        python \
         libxslt \
         libxml2 \
+        py-pip \
         build-base \
         libxslt-dev \
         libxml2-dev \
@@ -12,6 +15,11 @@ RUN apk add --update \
         python-dev \
         openssl-dev && \
 
-    pip install scrapy && \
+    pip install \
+        scrapy \
+        simplejson \
+        service_identity \
+        beautifulsoup && \
+
     apk del --purge *-dev build-base && \
     rm -rf /tmp/* /var/cache/apk/* /root/.cache/*
