@@ -1,17 +1,19 @@
-IMAGE := guneysu/lighttpd
+BASE := guneysu/lighttpd
+LATEST := $(BASE):latest
+VERSIONS := 1.4.43
+LAST_VERSION := 1.4.43
+default: $(VERSIONS) build push
 
-default: build
+$(VERSIONS):
+	@docker build -t $(BASE):$@ -f $@/Dockerfile .
 
-build: 
-	@docker build -t $(IMAGE) .
+build:
+	@docker build -t $(LATEST) -f $(LAST_VERSION)/Dockerfile .
 
-sh:
-	@docker run -it $(IMAGE) sh -li
+push: build
+	@docker push $(BASE):1.4.43
 
-push:
-	@docker push $(IMAGE)
+run:
+	@docker run -it $(LATEST)
 
-test:
-	@docker run -it $(IMAGE)
-
-.PHONY: default build test sh push 
+.PHONY: default build push run $(VERSIONS)
