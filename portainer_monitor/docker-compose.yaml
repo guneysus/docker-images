@@ -1,0 +1,19 @@
+version: "2.0"
+
+services:
+  local:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+    ports:
+      - 9001:9000
+
+  pcloud:
+    image: portainer/portainer
+    command: -H tcp://185.95.122.101:2376 --tlsverify
+    volumes: 
+      - /home/ahmed/.docker/machine/machines/pcloud:/certs
+    ports:
+      - 9002:9000
+

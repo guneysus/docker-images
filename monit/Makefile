@@ -13,6 +13,9 @@ build:
 
 push: build
 	@docker push $(LATEST)
+	@docker push $(BASE):5.15
+	@docker push $(BASE):5.17
+	@docker push $(BASE):5.20
 
 run:
 	@docker run -it $(LATEST)

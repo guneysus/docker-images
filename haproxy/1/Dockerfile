@@ -1,1 +1,1 @@
-FROM nginx:1-alpine
+FROM haproxy:1-alpine
