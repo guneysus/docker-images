@@ -12,10 +12,12 @@ RUN apk add -U --no-cache \
       sh configure && \
         make -j4 && \
       make install && \
-        apk del build-base *-dev
+        apk del build-base *-dev && \
+        rm /tmp/ -rf
 
 ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
 
 RUN lighttpd -t -f /etc/lighttpd/lighttpd.conf
 
+WORKDIR /
 CMD ["lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]

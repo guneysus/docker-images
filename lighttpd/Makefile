@@ -11,6 +11,7 @@ build:
 	@docker build -t $(LATEST) -f $(LAST_VERSION)/Dockerfile .
 
 push: build
+	@docker push $(LATEST)
 	@docker push $(BASE):1.4.43
 
 run:
