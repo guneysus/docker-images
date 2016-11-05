@@ -17,4 +17,7 @@ push: build
 run:
 	@docker run -it $(LATEST)
 
-.PHONY: default build push run $(VERSIONS)
+shell:
+	@docker run -it $(LATEST) sh -li	
+
+.PHONY: default build push run shell $(VERSIONS)

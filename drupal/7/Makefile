@@ -12,6 +12,6 @@ test: build
 	@http http://localhost:8888/index.php 
 
 run: build
-	@docker run -it -v /tmp/drupal-7.51 -p 8888:80  $(LATEST)
+	@docker-compose up
 
 .PHONY: default build test run push 

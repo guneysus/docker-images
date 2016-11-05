@@ -1,14 +1,13 @@
 FROM guneysu/lighttpd:1.4.43
 
 RUN apk update
-RUN apk add curl && \
-    update-ca-certificates
-WORKDIR /tmp
 
-RUN curl https://ftp.drupal.org/files/projects/drupal-7.51.tar.gz > drupal-7.51.tar.gz && \
-    tar xf drupal-7.51.tar.gz
+RUN apk add curl libbz2 && \
+    update-ca-certificates && \
+    curl https://ftp.drupal.org/files/projects/drupal-7.51.tar.gz > /var/www/drupal-7.51.tar.gz && \
+    cd /var/www && tar xf drupal-7.51.tar.gz 
 
-WORKDIR drupal-7.51
+WORKDIR /var/www/drupal-7.51
 
 RUN mkdir -p /var/www && \
     echo "<?php phpinfo(); ?>" > /var/www/index.php && \
@@ -22,6 +21,11 @@ RUN apk add php5-json php5-gd php5-xml php5-dom  php5-pdo_sqlite
 # BEGIN DRUPAL REQUIRED EXTENSIONS
 RUN apk add php5-zlib php5-openssl
 # BEGIN DRUPAL REQUIRED EXTENSIONS
+
+# BEGIN DRUPAL EXTRAS
+RUN apk add php5-memcache
+# END DRUPAL EXTRAS
+
 # BEGIN PHP.CONFIG
 RUN (echo; echo 'user_ini.filename = ".user.ini"') >> /etc/php5/php.ini
 

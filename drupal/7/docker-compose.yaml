@@ -1,0 +1,16 @@
+version: "2.0"
+
+services:
+  web:
+    image: guneysu/drupal:7
+    links:
+      - memcache
+    depends_on:
+      - memcache
+    ports:
+      - 8888:80
+    volumes:
+       - /var/www
+
+  memcache:
+    image: memcached:1.4-alpine
