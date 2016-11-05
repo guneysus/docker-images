@@ -1,0 +1,7 @@
+version: "2.0"
+
+services:
+  web:
+    image: guneysu/drupal:php7
+    ports: 
+      - 8888:9000
