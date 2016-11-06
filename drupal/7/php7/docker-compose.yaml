@@ -1,7 +1,16 @@
 version: "2.0"
 
 services:
-  web:
-    image: guneysu/drupal:php7
+  fpm:
+    build: .
     ports: 
-      - 8888:9000
+      - 9000:9000   
+    # volumes:
+    #    - /var/www
+
+  web:
+    build: fpm-proxy-nginx
+    ports: 
+      - 8888:80
+    depends_on:
+      - fpm

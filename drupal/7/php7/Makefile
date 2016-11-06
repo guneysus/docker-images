@@ -12,6 +12,7 @@ test: build
 	@http http://localhost:8888/index.php 
 
 run: build
+	@docker-compose build
 	@docker-compose up
 
 .PHONY: default build test run push 

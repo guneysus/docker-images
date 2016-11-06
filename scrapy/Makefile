@@ -1,4 +1,4 @@
-LATEST := guneysu/scrapy:edge
+LATEST := guneysu/scrapy:latest
 
 default: build
 
