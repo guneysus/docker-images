@@ -1,0 +1,12 @@
+version: "2.0"
+
+
+services:
+  app:
+    build: .
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx/conf/:/opt/openresty/nginx/conf/
+      - ./nginx/html:/opt/openresty/nginx/html
+      - ./nginx/lualib:/opt/openresty/nginx/lualib

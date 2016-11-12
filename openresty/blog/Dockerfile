@@ -1,0 +1,1 @@
+FROM guneysu/openresty:latest
