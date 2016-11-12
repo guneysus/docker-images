@@ -1,0 +1,10 @@
+version: "2.0"
+
+
+services:
+  app:
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./nginx/conf:/opt/openresty/nginx/conf/
