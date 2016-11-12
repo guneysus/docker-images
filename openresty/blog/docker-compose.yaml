@@ -8,5 +8,5 @@ services:
       - 8080:80
     volumes:
       - ./nginx/conf/:/opt/openresty/nginx/conf/
-      - ./nginx/html:/opt/openresty/nginx/html
-      - ./nginx/lualib:/opt/openresty/nginx/lualib
+      - ./nginx/html/:/opt/openresty/nginx/html/
+      - ./nginx/lualib/:/opt/openresty/nginx/lualib/

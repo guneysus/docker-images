@@ -1,5 +1,8 @@
 default: run
 
+base:
+	$(MAKE) -C ../base
+
 build:
 	@docker build -t guneysu/openresty-hello .
 
@@ -15,4 +18,10 @@ down:
 reload:
 	@docker exec -it merhaba_app_1 nginx -s reload
 
-.PHONY: default build push run reload
+sync:
+	@rsync -avzhe ssh --progress nginx root@185.95.122.101:/root/volumes/openresty/.
+
+deploy: sync
+	@docker-compose -f docker-compose.prod.yaml -p merhaba up --build
+
+.PHONY: default base build push run reload sync deploy

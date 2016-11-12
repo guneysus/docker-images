@@ -1,0 +1,30 @@
+{% for _, v in pairs(ngx) do %}
+ngx.{{_}}
+{% end %}
+
+
+
+
+{% for k, v in pairs(ngx.config) do %}
+ngx.config.{{ k }}
+{% end %}
+
+{{ ngx.log(0, "asdasd") }}
+
+
+{% for k, v in pairs(ngx.resp) do %}
+ngx.resp.{{ k }}
+{% end %}
+
+
+{% for k, v in pairs(ngx.arg) do %}
+ngx.arg.{{ k }}
+{% end %}
+
+ngx.time : {{ ngx.time }}
+ngx.get_now_ts : {{ ngx.get_now_ts }}
+
+{{ ngx.get_today }}
+{{ ngx.localtime }}
+{{ ngx.localtime }}
+{{ ngx.utctime  }}
