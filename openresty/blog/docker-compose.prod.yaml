@@ -10,3 +10,4 @@ services:
       - /root/volumes/openresty/nginx/conf/:/opt/openresty/nginx/conf/
       - /root/volumes/openresty/nginx/html/:/opt/openresty/nginx/html/
       - /root/volumes/openresty/nginx/lualib/:/opt/openresty/nginx/lualib/
+      - /root/volumes/openresty/nginx/posts/:/opt/openresty/nginx/posts/
