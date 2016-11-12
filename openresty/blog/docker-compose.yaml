@@ -10,3 +10,4 @@ services:
       - ./nginx/conf/:/opt/openresty/nginx/conf/
       - ./nginx/html/:/opt/openresty/nginx/html/
       - ./nginx/lualib/:/opt/openresty/nginx/lualib/
+      - ./nginx/posts/:/opt/openresty/nginx/posts/
