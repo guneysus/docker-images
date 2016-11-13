@@ -1,4 +1,4 @@
-local ok, newtab = pcall(require, "table.new")
+local ok, newtab = pcall(require, "table.new");
 local fs = newtab(0, 13);
 
 
@@ -15,14 +15,47 @@ local function scandir(directory)
     return t
 end
 
+
+local function contents(directory)
+
+    local i, t, popen = 0, {}, io.popen
+    local pfile = popen('ls -ApX "'..directory..'"')
+    for filename in pfile:lines() do
+        i = i + 1
+        t[i] = filename
+    end
+    pfile:close()
+    return t
+end
+
+
 local function fake()
   local t
-  t = {"foo", "bar", "baz"}
+  t = {"foo.txt", "bar.txt", "baz.txt"}
   return t
   -- body
 end
 
-fs.fake = fake
-fs.scandir = scandir
+
+local function posts(directory)
+
+
+    local i, t, popen = 0, {}, io.popen
+    local pfile = popen('ls -a "'..directory..'"')
+
+    for filename in pfile:lines() do
+        if string.find(filename, "%.txt$") then
+          i = i + 1
+          t[i] = filename
+        end
+    end
+    pfile:close()
+    return t
+end
+
+
+fs.scandir = scandir;
+fs.posts = posts
+fs.contents = contents
 
 return fs
