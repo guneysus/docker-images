@@ -1,0 +1,7 @@
+version: "2.0"
+
+services:
+  mqtt:
+    image: guneysu/mqtt:latest
+    ports:
+      - 8883:8883

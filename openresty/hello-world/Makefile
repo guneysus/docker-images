@@ -10,7 +10,7 @@ push: build
 	@docker push guneysu/openresty-hello
 
 run: build
-	@docker-compose -p merhaba up -d --build
+	@docker-compose -p merhaba up  --build
 
 down:
 	@docker-compose -p merhaba down
