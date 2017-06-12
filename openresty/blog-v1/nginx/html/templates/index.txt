@@ -1,6 +1,0 @@
-<h2>{{ ngx.var[1] }}</h2>
-<ul>
-{% for i, content in ipairs(contents) do %}
-<li>{{ i }}. <a href="{{ content }}">{{ content }}</a></li>
-{% end %}
-</ul>
