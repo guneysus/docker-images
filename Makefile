@@ -1,7 +1,4 @@
-TARGETS := haproxy nginx python monit
-default: $(TARGETS)
+default:
+	@bash build.sh
 
-$(TARGETS):
-	$(MAKE) -C $@
-
-.PHONY: default $(TARGETS)
+.PHONY: default
