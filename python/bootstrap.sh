@@ -21,6 +21,7 @@ VERSIONS="
 3.6
 3.6.0
 3.6.1
+3.6.2
 "
 for VERSION in $VERSIONS
 do
