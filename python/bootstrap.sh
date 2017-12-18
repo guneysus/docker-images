@@ -7,6 +7,7 @@ VERSIONS="
 3.4
 3.5
 3.6
+3.7
 "
 for VERSION in $VERSIONS
 do
