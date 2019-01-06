@@ -2,6 +2,7 @@
 
 BASE=nginx
 VERSIONS="
+1.14
 1.13
 1.12
 1.11
