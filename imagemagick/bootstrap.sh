@@ -3,4 +3,4 @@
 BASE=imagemagick
 VERSION=latest
 IMAGE=guneysu/$BASE:$VERSION
-docker build -t $IMAGE . && docker push $IMAGE&
+docker build -t $IMAGE . && docker push $IMAGE

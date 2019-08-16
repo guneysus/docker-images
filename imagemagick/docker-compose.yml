@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  optimize_images:
+    image: guneysu/imagemagick:latest
+    command: "convert /data/example1.jpg -resize x200 -monochrome /data/example1.webp"
+    volumes:
+      - ./examples:/data

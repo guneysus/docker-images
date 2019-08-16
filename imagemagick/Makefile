@@ -1,4 +1,7 @@
-default:
+build:
 	@bash bootstrap.sh
 
-.PHONY: default
+run:
+	@docker-compose up
+
+.PHONY: build run
