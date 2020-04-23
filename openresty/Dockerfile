@@ -1,7 +1,7 @@
 FROM alpine:3.3
 # https://raw.githubusercontent.com/ficusio/openresty/master/alpine/Dockerfile
 
-ENV OPENRESTY_VERSION 1.11.2.1
+ENV OPENRESTY_VERSION 1.15.8.3
 ENV OPENRESTY_PREFIX /opt/openresty
 ENV NGINX_PREFIX /opt/openresty/nginx
 ENV VAR_PREFIX /var/nginx
