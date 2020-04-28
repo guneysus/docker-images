@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.10
 # https://raw.githubusercontent.com/ficusio/openresty/master/alpine/Dockerfile
 
 ENV OPENRESTY_VERSION 1.15.8.3

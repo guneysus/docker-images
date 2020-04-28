@@ -1,7 +1,7 @@
 FROM alpine:3.10
 
-RUN cd /tmp/ && wget http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.43.tar.gz && tar xf lighttpd-1.4.43.tar.gz
-WORKDIR /tmp/lighttpd-1.4.43
+RUN cd /tmp/ && wget http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.55.tar.gz && tar xf lighttpd-1.4.55.tar.gz
+WORKDIR /tmp/lighttpd-1.4.55
 
 RUN apk add -U --no-cache \
         build-base \

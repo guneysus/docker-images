@@ -1,6 +1,6 @@
-FROM alpine:3.4
+FROM alpine:3.10
 
-ADD sources/lighttpd-1.4.45.tar.gz /tmp
+RUN cd /tmp/ && wget http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.45.tar.gz && tar xf lighttpd-1.4.45.tar.gz
 WORKDIR /tmp/lighttpd-1.4.45
 
 RUN apk add -U --no-cache \
