@@ -6,7 +6,7 @@ gevent==1.2.2
 gevent-websocket==0.10.1
 greenlet==0.4.12
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.10.1
 MarkupSafe==1.0
 python-engineio==1.5.4
 python-socketio==1.7.5
