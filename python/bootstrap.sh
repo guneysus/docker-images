@@ -11,7 +11,10 @@ VERSIONS="
 3.7
 3.8
 3.9
+3-onbuild
+3.8-onbuild
 "
+
 for VERSION in $VERSIONS
 do
   IMAGE=guneysu/$BASE:$VERSION
